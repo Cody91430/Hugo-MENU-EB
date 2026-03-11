@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 WORKDIR /home/node/app
 
-RUN chown -R node:node /home/node
+RUN apk update && apk upgrade --no-cache && chown -R node:node /home/node
 
 COPY --chown=node:node package*.json ./
 
