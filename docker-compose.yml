@@ -4,6 +4,11 @@ services:
   api:
     build: .
     restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
     healthcheck:
       test:
         [
